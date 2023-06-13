@@ -22,7 +22,7 @@ public class FileManager implements CRUDinterface {
 		else {
 			System.out.println("File names in ascending order: ");
 			for(String s : fileNames)
-				System.out.println(fileNames);
+				System.out.println(s);
 		}
 	}
 

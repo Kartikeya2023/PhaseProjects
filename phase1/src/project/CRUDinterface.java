@@ -1,5 +1,4 @@
 package project;
-
 import java.util.Scanner;
 
 public interface CRUDinterface {
