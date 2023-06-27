@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Admin {
 
 	 @Id
-	 @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
 	 @Column
