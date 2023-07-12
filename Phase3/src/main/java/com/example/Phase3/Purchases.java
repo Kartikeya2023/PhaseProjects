@@ -1,58 +1,46 @@
 package com.example.Phase3;
-
-import java.util.Date;
-
+import java.sql.Date;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="purchases")
+@Table(name = "purchases")
 public class Purchases {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column
+	private long productId;
+	
+	@Column
+	private long userId;
+	
+	@Column
+	private Date date;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @Column(name ="product_id")
-    private Long product_id;
-    
-    @Column(name ="user_id")
-    private Long user_id;
-    
-    @Column(name ="date")
-    private Date date;
-
-	@Override
-	public String toString() {
-		return "Purchases [id=" + id + ", product_id=" + product_id + ", user_id=" + user_id + ", date=" + date + "]";
+	public long getId() {
+		return id;
 	}
 
-	public Purchases() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Purchases(Long id, Long product_id, Long user_id, Date date) {
-		super();
+	public void setId(long id) {
 		this.id = id;
-		this.product_id = product_id;
-		this.user_id = user_id;
-		this.date = date;
 	}
 
-	public Long getProduct_id() {
-		return product_id;
+	public long getProductId() {
+		return productId;
 	}
 
-	public void setProduct_id(Long product_id) {
-		this.product_id = product_id;
+	public void setProductId(long productId) {
+		this.productId = productId;
 	}
 
-	public Long getUser_id() {
-		return user_id;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
 	public Date getDate() {
@@ -64,5 +52,4 @@ public class Purchases {
 	}
 	
 	
-    
 }

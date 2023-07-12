@@ -1,52 +1,46 @@
 package com.example.Phase3;
 
+
 import jakarta.persistence.*;
+
 
 @Entity
 @Table(name = "users")
 public class Users {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column
+	private String name;
+	
+	@Column
+	private String email;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name ="username")
-    private String username;
-
-    @Column(name ="password")
-    private String password;
-
-	@Override
-	public String toString() {
-		return "Users [id=" + id + ", username=" + username + ", password=" + password + "]";
+	public long getId() {
+		return id;
 	}
 
-	public String getUsername() {
-		return username;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public String getName() {
+		return name;
 	}
 
-	public String getPassword() {
-		return password;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
-	public Users() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Users(Long id, String username, String password) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-	}
-    
+	
 }

@@ -1,14 +1,14 @@
 package com.example.Phase3;
-
 import jakarta.persistence.*;
+
 
 @Entity
 @Table(name = "products")
 public class Products {
 	
 	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private Long id;
+	 @GeneratedValue(strategy = GenerationType.AUTO)
+	 private long  id;
 	 
 	 @Column(name ="name")
 	 private String name;
@@ -16,14 +16,13 @@ public class Products {
 	 @Column(name ="category")
 	 private String category;
 
-	@Override
-	public String toString() {
-		return "Products [id=" + id + ", name=" + name + ", category=" + category + "]";
+	 
+	public Long getId() {
+		return id;
 	}
 
-	public Products() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -41,8 +40,6 @@ public class Products {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
-
 
 	public Products(Long id, String name, String category) {
 		super();
@@ -50,5 +47,11 @@ public class Products {
 		this.name = name;
 		this.category = category;
 	}
-	
+
+	public Products() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	 
+	 
 }
